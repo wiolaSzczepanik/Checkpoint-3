@@ -12,7 +12,7 @@ public class ApplicationTest {
 
 
         System.out.println("create new book object>>>hardcode");
-        Book newBook = new Book(12131212, "Jan kowalski", "Historia w lesie", "Jakikolwiek", "2017","39", "ebook");
+        Book newBook = new Book(12131212, "Jan kowalski", "Historia w lesie", "Jakikolwiek", "2017", "39", "ebook");
         System.out.println(newBook.toString());
 
 //        System.out.println("create new book object>>>with user input");
@@ -24,8 +24,15 @@ public class ApplicationTest {
         adminMenager.addNewBook();
 
         System.out.println("Jerzy want to display all books, and pick one to edit");
+        System.out.println("Only display");
         adminMenager.displayAllMyBooks();
 
+        System.out.println("As Jerzy I would like to delete book from collection");
+        Book pickedBook = adminMenager.pickBookByName();
+        adminMenager.deleteBook(pickedBook);
+
+        System.out.println("As Jerzy I would like to delete book from collection");
+//        adminMenager.deleteBook();
 
 
 

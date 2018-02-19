@@ -53,33 +53,9 @@ public class Book {
         return type;
     }
 
-    public void setISBN(int ISBN) {
-        this.ISBN = ISBN;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setPublisher(String publisher) {
-        this.publisher = publisher;
-    }
-
-    public void setPublication_year(String publication_year) {
-        this.publication_year = publication_year;
-    }
-
-    public void setPrice(String price) {
-        this.price = price;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
 }
+
+
+
 
 

@@ -20,6 +20,11 @@ public class BookController {
         return new Book (ISBN, author,title,publisher, publication_year,price,type);
 
     }
+    public String pickBookByName() {
+        String name = input.getStringInput("Pick book by name: ");
+        return name;
+    }
+
 
 
 
