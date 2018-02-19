@@ -2,11 +2,8 @@ package controller;
 
 import model.Book;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-
 public class BookController {
-    InputController input = new InputController();
+    private InputController input = new InputController();
 
     public Book createNewBook() {
         int ISBN = input.getIntInput("Enter ISBN: ");
@@ -17,17 +14,13 @@ public class BookController {
         String price = input.getStringInput("Enter price: ");
         String type = input.getStringInput("Enter type: ");
 
-        return new Book (ISBN, author,title,publisher, publication_year,price,type);
-
+        return new Book(ISBN, author, title, publisher, publication_year, price, type);
     }
+
     public String pickBookByName() {
-        String name = input.getStringInput("Pick book by name: ");
-        return name;
+        return input.getStringInput("Pick book by name: ");
     }
 
 
-
-
-
-    }
+}
 

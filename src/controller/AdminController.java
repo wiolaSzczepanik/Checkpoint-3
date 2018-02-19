@@ -7,12 +7,12 @@ import view.BookView;
 import java.util.ArrayList;
 
 public class AdminController {
-    BookView bookView = new BookView();
-    BookController bookMenager = new BookController();
-    BookDB bookDB = new BookDB();
+    private BookView bookView = new BookView();
+    private BookController bookMenager = new BookController();
+    private BookDB bookDB = new BookDB();
 
     public void addNewBook() {
-        Book newBook  = bookMenager.createNewBook();
+        Book newBook = bookMenager.createNewBook();
         bookDB.insertToDBNewBook(newBook);
     }
 
@@ -24,10 +24,10 @@ public class AdminController {
     public Book pickBookByName() {
         ArrayList<Book> collectionOfBooks = bookDB.selectAllBooks();
         String nameBook = bookMenager.pickBookByName();
-        for (Book book : collectionOfBooks){
-            if(book.getTitle().equals(nameBook)){
+        for (Book book : collectionOfBooks) {
+            if (book.getTitle().equals(nameBook)) {
                 return book;
-            }else{
+            } else {
                 bookView.displayText("Not existing book");
             }
         }
@@ -36,6 +36,10 @@ public class AdminController {
 
 
     public void deleteBook(Book pickedBook) {
-        bookDB.deleteBook(pickedBook);
+        bookDB.deleteSelectBook(pickedBook);
     }
+
+//    public void editBook(Book pickedBook1) {
+//        bookDB.editSelectBook(pickedBook1);
+//    }
 }

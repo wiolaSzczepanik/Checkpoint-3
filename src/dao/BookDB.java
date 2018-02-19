@@ -72,22 +72,8 @@ public class BookDB implements BookInterface {
         return bookToEdit;
     }
 
-    private Connection createConnection() throws Exception {
-
-        String url = "jdbc:sqlite:/home/wiola/codecool/JAVA/CHECKPOINT_PRZYGOTOWANIE/Checkpoint-3/src/resource/jerzydatabase.db";
-        Connection conn = null;
-        try {
-            conn = DriverManager.getConnection(url);
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-        return conn;
-    }
-
-//    public void updateBook(Book pickedBook){
-//        }
-
-    public void deleteBook(Book pickedBook) {
+    @Override
+    public void deleteSelectBook(Book pickedBook) {
         String sql = "DELETE FROM books WHERE title = ?";
 
         try (Connection conn = this.createConnection();
@@ -101,6 +87,19 @@ public class BookDB implements BookInterface {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    }
+
+
+    private Connection createConnection() throws Exception {
+
+        String url = "jdbc:sqlite:/home/wiola/codecool/JAVA/CHECKPOINT_PRZYGOTOWANIE/Checkpoint-3/src/resource/jerzydatabase.db";
+        Connection conn = null;
+        try {
+            conn = DriverManager.getConnection(url);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return conn;
     }
 }
 
