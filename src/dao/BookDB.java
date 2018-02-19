@@ -2,10 +2,8 @@ package dao;
 
 import model.Book;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
 
 public class BookDB {
 
@@ -40,7 +38,28 @@ public class BookDB {
         return conn;
     }
 
+    public ArrayList<Book> selectAllBooks() {
+        ArrayList<Book> books = new ArrayList<>();
+        try
+                (Connection c = createConnection();
+                 Statement stmt = c.createStatement();
+                 ResultSet rs = stmt.executeQuery("SELECT * FROM books ;")
+                ) {
+
+            while (rs.next()) {
+                Book book = new Book (rs.getInt("ISBN"), rs.getString("author"),
+                        rs.getString("title"),rs.getString("publisher"),
+                        rs.getString("publication_year"), rs.getString("price"),
+                        rs.getString("type"));
+                books.add(book);
+            }
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
+        return books;
     }
+}
 
 
 

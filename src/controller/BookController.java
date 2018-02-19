@@ -2,6 +2,7 @@ package controller;
 
 import model.Book;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BookController {
@@ -18,17 +19,10 @@ public class BookController {
 
         return new Book (ISBN, author,title,publisher, publication_year,price,type);
 
-
-
     }
 
 
 
-    //    public int getIntInput(String message) {
-    //        System.out.println(message);
-    //        Scanner scanner = new Scanner(System.in);
-    //        int  input = scanner.nextInt();
-    //        return input;
-    //    }
+
     }
 

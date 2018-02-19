@@ -23,6 +23,10 @@ public class ApplicationTest {
 
         adminMenager.addNewBook();
 
+        System.out.println("Jerzy want to display all books, and pick one to edit");
+        adminMenager.displayAllMyBooks();
+
+
 
 
     }
