@@ -73,6 +73,10 @@ fabric.properties
 
 # Sonarlint plugin
 .idea/sonarlint
+.idea/Checkpoint-3.iml
+.idea/modules.xml
+.idea/vcs.xml
+
 
 
 # End of https://www.gitignore.io/api/database,intellij
