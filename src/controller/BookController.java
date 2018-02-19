@@ -8,6 +8,7 @@ public class BookController {
     InputController input = new InputController();
 
     public Book createNewBook() {
+        int ISBN = input.getIntInput("Enter ISBN: ");
         String author = input.getStringInput("Enter author: ");
         String title = input.getStringInput("Enter title: ");
         String publisher = input.getStringInput("Enter publisher: ");
@@ -15,7 +16,7 @@ public class BookController {
         String price = input.getStringInput("Enter price: ");
         String type = input.getStringInput("Enter type: ");
 
-        return new Book (author,title,publisher, publication_year,price,type);
+        return new Book (ISBN, author,title,publisher, publication_year,price,type);
 
 
 
